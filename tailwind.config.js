@@ -3,7 +3,13 @@ module.exports = {
   content: ["./src/**/*.{html,js}"],
 
   theme: {
-    extend: {},
+    extend: {
+      fontFamily:{
+        Poppins: ['Poppins', 'sans-serif'],
+        ScopeOne: ['Scope One', 'serif'],
+        Inika: ['Inika', 'serif']
+      }
+    },
   },
   plugins: [],
 }
