@@ -16,6 +16,9 @@ export class EmployeeService {
   getAllEmployee():Observable<Employees[]>{
     return this.http.get<Employees[]>(this.baseUrl)
   }
+  getEmployee(id:number):Observable<Employees>{
+    return this.http.get<Employees>(`${this.baseUrl}/${id}`)
+  }
 
 
 

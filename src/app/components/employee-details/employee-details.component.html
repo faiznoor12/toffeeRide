@@ -1,0 +1,100 @@
+<div
+  id="main"
+  class="w-screen h-screen bg-[rgb(243,248,253)] grid place-content-center"
+>
+  <div
+    id="card"
+    class="flex flex-col items-center bg-[#fff] shadow-xl rounded-xl"
+  >
+    <div class="flex">
+      <div
+        id="left"
+        class="relative flex flex-col items-center justify-center m-20 mb-10 mr-10 w-80 rounded-xl"
+      >
+        <div
+          id="profileIcon"
+          class="flex flex-col items-center justify-center gap-4 m-4"
+        >
+          <button
+            class="absolute left-0 grid w-12 h-12 bg-blue-500 rounded-full -top-3 place-content-center"
+            routerLink="/"
+          >
+            <span class="text-3xl text-white material-symbols-rounded">
+              chevron_left
+            </span>
+          </button>
+          <img src="" alt="" class="w-32 h-32 bg-yellow-400 rounded-full" />
+          <p class="text-2xl font-bold font-Inika text-[#555555]">
+            {{ employee.empFirstName }} {{ employee.empLastName }}
+          </p>
+          <p class="text-2xl font-bold font-ScopeOne text-[#555555]">
+            ID : {{ employee.id }}
+          </p>
+        </div>
+        <div
+          id="detials"
+          class="flex flex-col w-full gap-3 p-3 bg-[#f3f8fd] font-Poppins rounded-xl border-2 border-[#dfdfdf]"
+        >
+          <div id="joinDate" class="flex gap-2">
+            <p>Gender :</p>
+            <p>{{ employee.empGender }}</p>
+          </div>
+          <div id="mail" class="flex gap-2">
+            <p>Email :</p>
+            <p>{{ employee.empEmailId }}</p>
+          </div>
+          <div id="phone" class="flex gap-2">
+            <p>Phone :</p>
+            <p>{{ employee.empPhoneNumber }}</p>
+          </div>
+        </div>
+      </div>
+
+      <div
+        id="right"
+        class="flex flex-col items-center justify-center m-20 mb-10 ml-0 w-80 rounded-xl"
+      >
+        <div
+          id="detials"
+          class="flex flex-col w-full h-full gap-3 p-3 bg-[#f3f8fd] font-Poppins rounded-xl border-2 border-[#dfdfdf]"
+        >
+          <div id="birthDate" class="flex gap-2">
+            <p>Date of Birth:</p>
+            <p>{{ employee.empDateOfBirth }}</p>
+          </div>
+          <div id="joinDate" class="flex gap-2">
+            <p>Date of Joining :</p>
+            <p>{{ employee.empDateOfJoining }}</p>
+          </div>
+          <div id="address" class="flex gap-2">
+            <pre class="break-all font-Poppins">
+Address : {{ employee.empHomeAddrLine1 }},
+                  {{ employee.empHomeAddrLine2 }},
+                  {{ employee.empHomeAddrStreet }},
+                  {{ employee.empHomeAddrDistrict }},
+                  {{ employee.empHomeAddrState }},
+                  {{ employee.empHomeAddrCountry }},
+          Pin : {{ employee.empHomeAddrPinCode }}</pre
+            >
+            <!-- <p class="break-all">{{ employee.empHomeAddrLine1 }},{{employee.empHomeAddrLine2}}</p> -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="flex gap-12 mb-10">
+      <button
+        class="flex items-center justify-center w-48 gap-2 text-white bg-blue-500 h-14 rounded-2xl"
+      >
+        <span class="h-8 material-symbols-rounded"> edit_square </span> Edit
+        Employee
+      </button>
+      <button
+        class="flex items-center justify-center w-48 gap-2 text-white bg-red-600 h-14 rounded-2xl"
+      >
+        <span class=" material-symbols-rounded"> delete </span>Delete
+        Employee
+      </button>
+    </div>
+  </div>
+</div>
