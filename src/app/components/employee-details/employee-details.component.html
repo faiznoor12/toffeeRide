@@ -1,8 +1,9 @@
 <div
   id="main"
-  class="w-screen h-screen bg-[rgb(243,248,253)] grid place-content-center"
+  class="w-screen h-screen bg-[#f3f8fd] grid place-content-center"
 >
   <div
+    *ngIf="employee"
     id="card"
     class="flex flex-col items-center bg-[#fff] shadow-xl rounded-xl"
   >
@@ -25,7 +26,7 @@
           </button>
           <img src="" alt="" class="w-32 h-32 bg-yellow-400 rounded-full" />
           <p class="text-2xl font-bold font-Inika text-[#555555]">
-            {{ employee.empFirstName }} {{ employee.empLastName }}
+            {{employee.empFirstName}} {{employee.empLastName}}
           </p>
           <p class="text-2xl font-bold font-ScopeOne text-[#555555]">
             ID : {{ employee.id }}
@@ -84,6 +85,7 @@ Address : {{ employee.empHomeAddrLine1 }},
 
     <div class="flex gap-12 mb-10">
       <button
+        [routerLink]="['/edit/employee',employee.id]"
         class="flex items-center justify-center w-48 gap-2 text-white bg-blue-500 h-14 rounded-2xl"
       >
         <span class="h-8 material-symbols-rounded"> edit_square </span> Edit

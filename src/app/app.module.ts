@@ -7,6 +7,8 @@ import { HomeComponent } from './components/home/home.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { EmployeeDetailsComponent } from './components/employee-details/employee-details.component';
+import { EditEmployeeComponent } from './components/edit-employee/edit-employee.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -14,6 +16,7 @@ import { EmployeeDetailsComponent } from './components/employee-details/employee
     AppComponent,
     HomeComponent,
     EmployeeDetailsComponent,
+    EditEmployeeComponent,
 
 
   ],
@@ -21,7 +24,8 @@ import { EmployeeDetailsComponent } from './components/employee-details/employee
     BrowserModule,
     RouterModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule
 
   ],
   providers: [],

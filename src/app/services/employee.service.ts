@@ -19,7 +19,9 @@ export class EmployeeService {
   getEmployee(id:number):Observable<Employees>{
     return this.http.get<Employees>(`${this.baseUrl}/${id}`)
   }
-
+  updateEmployee(id:number , employee :Partial<Employees>): Observable<Employees>{
+    return this.http.put<Employees>(`${this.baseUrl}/${id}`,employee)
+  }
 
 
 }
