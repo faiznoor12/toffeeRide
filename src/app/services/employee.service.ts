@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, map } from 'rxjs';
 import { environment } from 'src/environments/environment.development';
 import { Employees } from '../model/employee.model';
 
@@ -21,6 +21,12 @@ export class EmployeeService {
   }
   updateEmployee(id:number , employee :Partial<Employees>): Observable<Employees>{
     return this.http.put<Employees>(`${this.baseUrl}/${id}`,employee)
+  }
+  addEmployee( employee :Partial<Employees>): Observable<Employees>{
+    return this.http.post<Employees>(this.baseUrl,employee)
+  }
+  deleteEmployee(id:number){
+    return this.http.delete<Employees>(`${this.baseUrl}/${id}`)
   }
 
 

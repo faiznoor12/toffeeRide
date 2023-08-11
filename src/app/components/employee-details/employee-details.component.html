@@ -5,12 +5,12 @@
   <div
     *ngIf="employee"
     id="card"
-    class="flex flex-col items-center bg-[#fff] shadow-xl rounded-xl"
+    class="flex flex-col items-center bg-[#fff] shadow-xl rounded-xl w-screen h-screen lg:w-fit lg:h-fit justify-center overflow-auto"
   >
-    <div class="flex">
+    <div class="flex flex-col lg:flex-row">
       <div
         id="left"
-        class="relative flex flex-col items-center justify-center m-20 mb-10 mr-10 w-80 rounded-xl"
+        class="relative flex flex-col items-center justify-center m-20 mb-0 lg:mb-10 lg:mr-10 w-80 rounded-xl"
       >
         <div
           id="profileIcon"
@@ -24,7 +24,7 @@
               chevron_left
             </span>
           </button>
-          <img src="" alt="" class="w-32 h-32 bg-yellow-400 rounded-full" />
+          <img src="https://api.dicebear.com/6.x/initials/svg?seed={{ employee.empFirstName }}{{ employee.empLastName }}" alt="" class="w-32 h-32 bg-yellow-400 rounded-full" />
           <p class="text-2xl font-bold font-Inika text-[#555555]">
             {{employee.empFirstName}} {{employee.empLastName}}
           </p>
@@ -53,7 +53,7 @@
 
       <div
         id="right"
-        class="flex flex-col items-center justify-center m-20 mb-10 ml-0 w-80 rounded-xl"
+        class="flex flex-col items-center justify-center m-20 mt-2 mb-5 lg:mt-20 lg:mb-10 lg:ml-0 w-80 rounded-xl"
       >
         <div
           id="detials"
@@ -83,16 +83,17 @@ Address : {{ employee.empHomeAddrLine1 }},
       </div>
     </div>
 
-    <div class="flex gap-12 mb-10">
+    <div class="flex flex-col gap-2 mb-4 sm:flex-row md:mb-10 md:gap-12">
       <button
         [routerLink]="['/edit/employee',employee.id]"
-        class="flex items-center justify-center w-48 gap-2 text-white bg-blue-500 h-14 rounded-2xl"
+        class="flex items-center justify-center gap-2 text-white bg-blue-500 w-80 sm:w-48 h-14 rounded-2xl"
       >
         <span class="h-8 material-symbols-rounded"> edit_square </span> Edit
         Employee
       </button>
       <button
-        class="flex items-center justify-center w-48 gap-2 text-white bg-red-600 h-14 rounded-2xl"
+        class="flex items-center justify-center gap-2 text-white bg-red-500 w-80 sm:w-48 h-14 rounded-2xl"
+        (click)="deleteEmployee()"
       >
         <span class=" material-symbols-rounded"> delete </span>Delete
         Employee

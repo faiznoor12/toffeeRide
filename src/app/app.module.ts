@@ -9,6 +9,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { EmployeeDetailsComponent } from './components/employee-details/employee-details.component';
 import { EditEmployeeComponent } from './components/edit-employee/edit-employee.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { AddEmployeeComponent } from './components/add-employee/add-employee.component';
+
 
 
 @NgModule({
@@ -17,6 +19,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     HomeComponent,
     EmployeeDetailsComponent,
     EditEmployeeComponent,
+    AddEmployeeComponent,
 
 
   ],

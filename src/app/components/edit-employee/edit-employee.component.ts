@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
+import { HotToastService } from '@ngneat/hot-toast';
 import { Employees } from 'src/app/model/employee.model';
 import { EmployeeService } from 'src/app/services/employee.service';
 
@@ -33,7 +34,8 @@ export class EditEmployeeComponent {
     private activedRouter: ActivatedRoute,
     private employeeService: EmployeeService,
     private formBuilder: FormBuilder,
-    private router:Router
+    private router:Router,
+    private toaster:HotToastService
   ) {}
 
   ngOnInit(): void {
@@ -83,7 +85,12 @@ export class EditEmployeeComponent {
       empDateOfJoining:form.dateOfJoing
     }
 
-    this.employeeService.updateEmployee(this.empId,updatedEmployee).subscribe(res=>{
+    this.employeeService.updateEmployee(this.empId,updatedEmployee).pipe(
+      this.toaster.observe({
+        loading: 'Saving...',
+        success: 'Editing successfull!',
+        error: 'Something went wrong!!!'
+      })).subscribe(res=>{
       this.router.navigateByUrl(`/employee/${this.empId}`)
     })
 

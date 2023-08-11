@@ -20,7 +20,6 @@ export class HomeComponent {
   getAllEmployees() {
     this.employeeService.getAllEmployee().subscribe((res) => {
       this.allEmployees = res;
-      console.log(this.allEmployees);
     });
   }
 
@@ -28,7 +27,7 @@ export class HomeComponent {
     if(!input) return this.getAllEmployees()
      this.employeeService.getAllEmployee().subscribe(res=>{
       this.allEmployees = res.filter(employee => {
-        return employee.empFirstName.toLowerCase().includes(input.toLowerCase()) 
+        return employee.empFirstName.toLowerCase().includes(input.toLowerCase())
       })
      })
   }
